@@ -14,26 +14,26 @@ replay_pid*
 
 
 # Log files
-/frontend/rabbit_frontend/logs
-/frontend/rabbit_frontend/*.log
-/frontend/rabbit_frontend/npm-debug.log*
-/frontend/rabbit_frontend/yarn-debug.log*
-/frontend/rabbit_frontend/yarn-error.log*
+/frontend/logs
+/frontend/*.log
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
 
 # Build directories
-/frontend/rabbit_frontend/build/Release
+/frontend/build/Release
 
 # Dependencies
-/frontend/rabbit_frontend/node_modules/
-/frontend/rabbit_frontend/jspm_packages/
+/frontend/node_modules/
+/frontend/jspm_packages/
 
 # Distribution and typings directories
-/frontend/rabbit_frontend/dist/
-/frontend/rabbit_frontend/typings/
+/frontend/dist/
+/frontend/typings/
 
 # Various config files
-/frontend/rabbit_frontend/.npm
-/frontend/rabbit_frontend/.eslintcache
-/frontend/rabbit_frontend/.node_repl_history
-/frontend/rabbit_frontend/*.tgz
-/frontend/rabbit_frontend/.yarn-integrity
+/frontend/.npm
+/frontend/.eslintcache
+/frontend/.node_repl_history
+/frontend/*.tgz
+/frontend/.yarn-integrity
