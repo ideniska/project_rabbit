@@ -1,10 +1,10 @@
-package com.rabbit_backend;
+package com.project_rabbit;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RabbitBackendApplicationTests {
+class ProjectRabbitApplicationTests {
 
 	@Test
 	void contextLoads() {
