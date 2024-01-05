@@ -5,6 +5,6 @@ spring:
     password: ${PROD_DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
-  sql:
-    init:
-      mode: always
+  jpa:
+    hibernate:
+      ddl-auto: update #TODO stop using this in production and move to migration tools
