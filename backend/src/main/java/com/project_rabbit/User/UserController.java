@@ -12,14 +12,14 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Integer> createUser(@RequestBody User user) {
         Integer userId = userService.createUser(user);
         return new ResponseEntity<>(userId, HttpStatus.CREATED);
     }
 
-    @GetMapping("{id}")
-    public ResponseEntity<User> findCustomer(@PathVariable("id") Integer userId) {
+    @GetMapping("/find/{id}")
+    public ResponseEntity<User> findUser(@PathVariable("id") Integer userId) {
         User theCustomer = userService.findUser(userId)
                 .stream().findFirst()
                 .orElseThrow(() -> new RuntimeException(
@@ -27,7 +27,7 @@ public class UserController {
         return new ResponseEntity<>(theCustomer, HttpStatus.OK);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<User> updateUser(@PathVariable("id") Integer userId,
             @RequestBody User user) {
         User theCustomer = userService
@@ -35,7 +35,7 @@ public class UserController {
         return new ResponseEntity<>(theCustomer, HttpStatus.OK);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<HttpStatus> deleteUser(@PathVariable("id") Integer userId) {
         userService.deleteUser(userId);
         return new ResponseEntity<>(HttpStatus.OK);

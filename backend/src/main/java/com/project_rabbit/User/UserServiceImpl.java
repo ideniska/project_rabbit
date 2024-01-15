@@ -2,7 +2,6 @@ package com.project_rabbit.User;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 @Service
@@ -13,14 +12,12 @@ public class UserServiceImpl implements UserService {
 
         @Override
         public Integer createUser(User user) {
-                return userRepository
-                                .save(user).getUserId();
+                return userRepository.save(user).getUserId();
         }
 
         @Override
         public Optional<User> findUser(Integer userId) {
-                return userRepository
-                                .findById(userId);
+                return userRepository.findById(userId);
 
         }
 
@@ -36,8 +33,7 @@ public class UserServiceImpl implements UserService {
 
                 theUser.setEmail(user.getEmail());
 
-                return userRepository
-                                .save(theUser);
+                return userRepository.save(theUser);
         }
 
         @Override
@@ -49,8 +45,7 @@ public class UserServiceImpl implements UserService {
                                         String.format("The user with id %s does not exist",
                                                         userId));
                 }
-                userRepository
-                                .delete(theUser);
+                userRepository.delete(theUser);
 
         }
 }

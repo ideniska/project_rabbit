@@ -18,10 +18,10 @@ public class User {
     @GeneratedValue
     private Integer userId;
 
-    @Column(name = "first_name")
+    @Column(name = "first_name", nullable = true)
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "last_name", nullable = true)
     private String lastName;
 
     @Column(name = "email")
