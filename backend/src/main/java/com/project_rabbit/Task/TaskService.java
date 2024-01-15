@@ -1,6 +1,7 @@
 package com.project_rabbit.Task;
 
 import java.util.Optional;
+import java.util.List;
 
 public interface TaskService {
     Integer createTask(Task task);
@@ -9,6 +10,8 @@ public interface TaskService {
 
     Task updateTask(Integer taskId,
             Task task);
+
+    List<Task> getAllTasks();
 
     void deleteTask(Integer taskId);
 }

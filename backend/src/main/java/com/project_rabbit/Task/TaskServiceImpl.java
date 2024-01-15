@@ -1,7 +1,12 @@
 package com.project_rabbit.Task;
 
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,6 +23,11 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public Optional<Task> findTask(Integer taskId) {
         return taskRepository.findById(taskId);
+    }
+
+    @Override
+    public List<Task> getAllTasks() {
+        return taskRepository.findAll();
     }
 
     @Override
