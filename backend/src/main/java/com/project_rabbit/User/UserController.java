@@ -1,6 +1,9 @@
 package com.project_rabbit.User;
 
 import lombok.RequiredArgsConstructor;
+
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +28,12 @@ public class UserController {
                 .orElseThrow(() -> new RuntimeException(
                         String.format("user with id %s does not exist", userId)));
         return new ResponseEntity<>(theCustomer, HttpStatus.OK);
+    }
+
+    @GetMapping("/all-users")
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.getAllUsers();
+        return ResponseEntity.ok(users);
     }
 
     @PutMapping("/update/{id}")

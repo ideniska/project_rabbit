@@ -1,5 +1,6 @@
 package com.project_rabbit.User;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
@@ -9,6 +10,8 @@ public interface UserService {
 
     User updateUser(Integer userId,
             User user);
+
+    List<User> getAllUsers();
 
     void deleteUser(Integer userId);
 }
