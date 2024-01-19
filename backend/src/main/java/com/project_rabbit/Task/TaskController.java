@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("api/v1/task")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class TaskController {
 
     private final TaskService taskService;
@@ -29,10 +30,10 @@ public class TaskController {
         return new ResponseEntity<>(theTask, HttpStatus.OK);
     }
 
-    @GetMapping("/all-tasks") // Map this method to the /api/tasks endpoint
+    @GetMapping("/all-tasks")
     public ResponseEntity<List<Task>> getAllTasks() {
-        List<Task> tasks = taskService.getAllTasks(); // Retrieve all tasks using the service
-        return ResponseEntity.ok(tasks); // Return the list of tasks with an OK status
+        List<Task> tasks = taskService.getAllTasks();
+        return ResponseEntity.ok(tasks);
     }
 
     @PutMapping("/update/{id}")

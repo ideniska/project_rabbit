@@ -1,11 +1,7 @@
 package com.project_rabbit.Task;
 
 import lombok.RequiredArgsConstructor;
-
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -38,6 +34,7 @@ public class TaskServiceImpl implements TaskService {
 
         theTask.setTitle(task.getTitle());
         theTask.setDescription(task.getDescription());
+        theTask.setStartDate(task.getStartDate());
         theTask.setDueDate(task.getDueDate());
         theTask.setProjectId(task.getProjectId());
         theTask.setStatus(task.getStatus());

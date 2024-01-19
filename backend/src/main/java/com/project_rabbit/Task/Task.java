@@ -22,6 +22,9 @@ public class Task {
     @Column(name = "description", nullable = true)
     private String description;
 
+    @Column(name = "start_date", nullable = true)
+    private String startDate;
+
     @Column(name = "due_date", nullable = true)
     private String dueDate;
 
