@@ -35,6 +35,9 @@ public class Task {
     @Column(name = "project", nullable = false)
     private int projectId;
 
+    @Column(name = "epic", nullable = true)
+    private int epicId;
+
     @Column(name = "assigned_to", nullable = true)
     private int assignedTo;
 
