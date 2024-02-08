@@ -1,24 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Home from "./pages/Home/Home";
+import Board from "./pages/Board/Board";
+import Timeline from "./pages/Timeline/Timeline";
+import Profile from "./pages/Profile/Profile";
+import ApiTestPage from "./pages/ApiTest/ApiTest";
+import "./App.css";
 
+const ContentWrapper = ({ children }) => {
+  return <div className="content">{children}</div>;
+};
+
+// App component with routes
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Sidebar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <ContentWrapper>
+                <Home />
+              </ContentWrapper>
+            }
+          ></Route>
+          <Route
+            path="/board"
+            element={
+              <ContentWrapper>
+                <Board />
+              </ContentWrapper>
+            }
+          ></Route>
+          <Route
+            path="/timeline"
+            element={
+              <ContentWrapper>
+                <Timeline />
+              </ContentWrapper>
+            }
+          ></Route>
+          <Route
+            path="/profile"
+            element={
+              <ContentWrapper>
+                <Profile />
+              </ContentWrapper>
+            }
+          ></Route>
+          <Route
+            path="/test-page"
+            element={
+              <ContentWrapper>
+                <ApiTestPage />
+              </ContentWrapper>
+            }
+          ></Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
