@@ -6,6 +6,7 @@ import Board from "./pages/Board/Board";
 import Timeline from "./pages/Timeline/Timeline";
 import Profile from "./pages/Profile/Profile";
 import ApiTestPage from "./pages/ApiTest/ApiTest";
+import Backlog from "./pages/Backlog/Backlog";
 import "./App.css";
 
 const ContentWrapper = ({ children }) => {
