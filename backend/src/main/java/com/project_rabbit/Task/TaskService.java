@@ -8,6 +8,8 @@ public interface TaskService {
 
     Optional<Task> findTask(Integer taskId);
 
+    List<Task> findByProjectId(Integer projectId);
+
     Task updateTask(Integer taskId,
             Task task);
 

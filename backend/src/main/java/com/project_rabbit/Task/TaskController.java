@@ -30,9 +30,17 @@ public class TaskController {
         return new ResponseEntity<>(theTask, HttpStatus.OK);
     }
 
+    // API FOR TESTING - DISPLAYS ALL TASKS FOR ALL USERS!
     @GetMapping("/all-tasks")
     public ResponseEntity<List<Task>> getAllTasks() {
         List<Task> tasks = taskService.getAllTasks();
+        return ResponseEntity.ok(tasks);
+    }
+
+    // FIND ALL TASKS WITH A PROJECT ID
+    @GetMapping("/all-tasks/{id}")
+    public ResponseEntity<List<Task>> findTaskByProject(@PathVariable("id") Integer projectId) {
+        List<Task> tasks = taskService.findByProjectId(projectId);
         return ResponseEntity.ok(tasks);
     }
 

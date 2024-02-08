@@ -33,14 +33,14 @@ public class Task {
     private LocalDateTime createdAt;
 
     @Column(name = "project", nullable = false)
-    private int projectId;
+    private Integer projectId;
 
     @Column(name = "epic", nullable = true)
-    private int epicId;
+    private Integer epicId;
 
     @Column(name = "assigned_to", nullable = true)
-    private int assignedTo;
+    private Integer assignedTo;
 
     @Column(name = "status", nullable = false)
-    private int status;
+    private Integer status;
 }
